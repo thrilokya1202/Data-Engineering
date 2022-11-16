@@ -1,0 +1,15 @@
+#include<stdio.h>
+void main()
+{
+        int a[30];
+        int n,sum=0;
+        printf("enter number of elements");
+        scanf("%d",&n);
+        for(int i=0;i<n;i++)
+        {
+        scanf("%d",&a[i]);
+        sum+=a[i];
+        }
+        sum=sum/n;
+        printf("mean is %d",sum);
+}

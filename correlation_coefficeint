@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<math.h>
+void main()
+{
+int n;
+float x[35],y[35],x_sum=0,y_sum=0,x_mean,y_mean,cov,r,x_std=0,y_std=0,xy=0;
+printf("enter number of elements");
+scanf("%d",&n);
+printf("enter age data");
+for(int i=0;i<n;i++)
+{
+scanf("%f",&x[i]);
+x_sum+=x[i];
+}
+printf("enter fat data");
+for(int i=0;i<n;i++)
+{
+scanf("%f",&y[i]);
+y_sum+=y[i];
+}
+for(int i=0;i<n;i++)
+{
+xy+=x[i]*y[i];
+}
+xy=xy/n;
+x_mean=x_sum/n;
+y_mean=y_sum/n;
+cov=(xy)-(x_mean*y_mean);
+printf("covariance is %f",cov);
+for(int i=0;i<n;i++)
+{
+x_std+=(x[i]-x_mean)*(x[i]-x_mean);
+y_std+=(y[i]-y_mean)*(y[i]-y_mean);
+}
+x_std=sqrt(x_std/n);
+y_std=sqrt(y_std/n);
+r=cov/(x_std*y_std);
+printf("correlation coefficient is %f",r);
+}

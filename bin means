@@ -1,0 +1,39 @@
+#include<stdio.h>
+void main()
+{
+int n,b;
+int a[50];
+printf("enter number of elements");
+scanf("%d",&n);
+printf("enter elements");
+for(int i=0;i<n;i++)
+{
+scanf("%d",&a[i]);
+}
+printf("enter bin size");
+scanf("%d",&b);
+if(n%b!=0)
+{
+while(n%b!=0)
+{
+a[n++]=0;
+}
+}
+for(int i=0;i<n;i=i+b)
+{
+int sum=0,m;
+for(int j=0;j<b;j++)
+{
+sum=sum+a[i+j];
+}
+m=sum/b;
+for(int k=0;k<b;k++)
+{
+a[i+k]=m;
+}
+}
+for(int i=0;i<n;i++)
+{
+printf("%d",a[i]);
+}
+}

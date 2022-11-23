@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<math.h>
+void main()
+{
+        int n;
+        float a[20],sum=0,mean,sum2=0,std;
+        printf("enter number of elements");
+        scanf("%d",&n);
+        printf("enter elements");
+        for(int i=0;i<n;i++)
+        {
+                scanf("%f",&a[i]);
+                sum=sum+a[i];
+        }
+        mean=sum/n;
+        for(int i=0;i<n;i++)
+        {
+                sum2+=(a[i]-mean)*(a[i]-mean);
+        }
+        std=sqrt(sum2/n);
+        printf("after normalization using Z-Score");
+        for(int i=0;i<n;i++)
+        {
+                a[i]=(a[i]-mean)/std;
+                printf("%f\t",a[i]);
+        }
+}
